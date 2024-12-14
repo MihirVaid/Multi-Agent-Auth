@@ -1,12 +1,12 @@
+#API key chat id and token to be replaced before running
 import asyncio
 import streamlit as st
 import pandas as pd
 import google.generativeai as genai
 from telegram import Bot
 import telegram
-from PIL import Image  # Import for image handling
+from PIL import Image  
 
-# Set up Streamlit page configuration - this must come first
 st.set_page_config(
     page_title="ArticleFatafat - Article Summarizer",
     page_icon="📄",
@@ -14,17 +14,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Load and display the logo
-logo_path = "asset/logo_image.png"  # Replace with your image filename
+logo_path = "asset/logo_image.png"  
 logo = Image.open(logo_path)
-st.image(logo, width=100)  # Adjust width as needed
+st.image(logo, width=100)  
 
 # Telegram Bot Constants
-TOKEN = "7702024552:AAHmnl2JO0MQ08tbPv53pa97jrnMQIBb2gg"
-CHAT_ID = "1215055486"
+TOKEN = "Telegram_token"
+CHAT_ID = "chat_id"
 
 # Configure the Gemini API
-genai.configure(api_key="AIzaSyCgsv4OA_ZlV-73_HN_Z1Jfhdtn5mibWq0")  # Replace with your API key
+genai.configure(api_key="api_key")  
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("Get bite sized articles")
